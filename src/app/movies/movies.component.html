@@ -1,0 +1,29 @@
+<h2>Movies</h2>
+<ul class="movies">
+  <li *ngFor="let movie of movies">
+    <button
+      type="button"
+      (click)="onSelect(movie)"
+      [class.selected]="movie === selectedMovie"
+    >
+      <span class="details">{{ movie.primaryTitle }}</span>
+      <span class="details">{{ movie.originalTitle }}</span>
+      <span class="details">{{ movie.startYear }}</span>
+      <span class="details">{{ movie.genre }}</span>
+    </button>
+  </li>
+</ul>
+<div *ngIf="selectedMovie">
+  <h2>{{ selectedMovie.primaryTitle | uppercase }} Details</h2>
+  <div>Original title: {{ selectedMovie.originalTitle }}</div>
+  <div>
+    <label for="start-year">Start year: </label>
+    <input
+      id="start-year"
+      [(ngModel)]="selectedMovie.startYear"
+      placeholder="start-year"
+    />
+    <label for="genre">Genre: </label>
+    <input id="genre" [(ngModel)]="selectedMovie.genre" placeholder="genre" />
+  </div>
+</div>
