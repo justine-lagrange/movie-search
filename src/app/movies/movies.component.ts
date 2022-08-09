@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../movie';
-import { MOVIES } from '../mock-movies';
+import { Movie } from '../types';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-movies',
@@ -8,13 +8,24 @@ import { MOVIES } from '../mock-movies';
   styleUrls: ['./movies.component.css'],
 })
 export class MoviesComponent implements OnInit {
-  movies = MOVIES;
+  movies: Movie[] = [];
   selectedMovie?: Movie;
+
   onSelect(movie: Movie): void {
     this.selectedMovie = movie;
   }
 
-  constructor() {}
+  resetMovieSelection(): void {
+    this.selectedMovie = undefined;
+  }
 
-  ngOnInit(): void {}
+  getMovies(): void {
+    this.movieService.getMovies().subscribe((movies) => (this.movies = movies));
+  }
+
+  constructor(private movieService: MovieService) {}
+
+  ngOnInit(): void {
+    this.getMovies();
+  }
 }
