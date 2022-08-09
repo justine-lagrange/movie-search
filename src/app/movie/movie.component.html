@@ -1,0 +1,25 @@
+<div class="overlay" *ngIf="movie">
+  <div class="popup">
+    <label for="primaryTitle">Primary title: </label>
+    <input
+      id="primaryTitle"
+      [(ngModel)]="movie.primaryTitle"
+      placeholder="primaryTitle"
+    />
+    <label for="originalTitle">Original title: </label>
+    <input
+      id="originalTitle"
+      [(ngModel)]="movie.originalTitle"
+      placeholder="originalTitle"
+    />
+    <label for="start-year">Start year: </label>
+    <input
+      id="start-year"
+      [(ngModel)]="movie.startYear"
+      placeholder="start-year"
+    />
+    <label for="genre">Genre: </label>
+    <input id="genre" [(ngModel)]="movie.genre" placeholder="genre" />
+    <button type="button" (click)="onSaveEdit()"><span>Save</span></button>
+  </div>
+</div>
