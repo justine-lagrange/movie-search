@@ -1,6 +1,16 @@
 <h2>Movies</h2>
+<div class="search-movie">
+  <input
+    class="form-control"
+    type="text"
+    name="search"
+    [(ngModel)]="searchText"
+    autocomplete="off"
+    placeholder="Start searching for a movie by title"
+  />
+</div>
 <ul class="movies">
-  <li *ngFor="let movie of movies">
+  <li *ngFor="let movie of movies | filter: searchText">
     <button
       type="button"
       (click)="onSelect(movie)"

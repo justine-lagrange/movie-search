@@ -59,6 +59,12 @@ h1 {
     flex-direction: column;
     justify-content: center;
   }
+  .search-movie {
+    margin-bottom: 20px;
+  }
+  .form-control {
+    width: 500px;
+  }
   
   /* everywhere else */
   * {

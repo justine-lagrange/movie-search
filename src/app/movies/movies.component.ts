@@ -10,6 +10,7 @@ import { MovieService } from '../movie.service';
 export class MoviesComponent implements OnInit {
   movies: Movie[] = [];
   selectedMovie?: Movie;
+  searchText: string = '';
 
   onSelect(movie: Movie): void {
     this.selectedMovie = movie;
