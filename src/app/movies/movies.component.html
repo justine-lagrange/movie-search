@@ -15,15 +15,15 @@
       <th class="header">Primary title</th>
       <th class="header">Original title</th>
       <th class="header">Start year</th>
-      <th class="header">Genre</th>
+      <th class="header">Genres</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let movie of movies | filter: searchText">
+    <tr *ngFor="let movie of movies.slice(0, 100) | filter: searchText">
       <td class="details">{{ movie.primaryTitle }}</td>
       <td class="details">{{ movie.originalTitle }}</td>
       <td class="details">{{ movie.startYear }}</td>
-      <td class="details">{{ movie.genre }}</td>
+      <td class="details">{{ movie.genres }}</td>
       <td>
         <button
           type="button"
