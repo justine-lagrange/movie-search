@@ -9,7 +9,6 @@ import * as data from '../movies.json';
 })
 export class MoviesComponent implements OnInit {
   movies: Movie[] = [];
-  imdbMovies: any;
   selectedMovie?: Movie;
   searchText: string = '';
 
